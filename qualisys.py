@@ -65,7 +65,7 @@ def get_metadata(file_path, sentinel_word='Frame'):
         # Now process events.
         metadata['events'] = [_parse_event(event, metadata['time_stamp']) for event in raw_events]
 
-    return metadata, n
+    return QTMMetadata(metadata, n)
 
 
 def load_qtm_data(file_path, sentinel_word='Frame'):
