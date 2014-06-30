@@ -2,7 +2,9 @@
 python-qualisys
 ===============
 
-Load data from a .txt file exported from QTM into `pandas <http://pandas.pydata.org>`_:
+Load data from a .txt file exported from QTM into `pandas <http://pandas.pydata.org>`_::
+
+    pip install qualisys
 
 .. code-block:: python
 
