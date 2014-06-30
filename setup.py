@@ -31,7 +31,7 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Development Status :: 3 - Alpha',
-        'Intended Audience :: Science/Researchers',
+        'Intended Audience :: Science/Research',
         'Topic :: Utilities',
         'Topic :: Scientific/Engineering',
     ],
