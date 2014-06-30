@@ -2,8 +2,8 @@ from setuptools import setup
 from os.path import join, dirname
 
 
-def read(*names, **kwargs):
-    return open(join(dirname(__file__), *names), encoding=kwargs.get('encoding', 'utf8')).read()
+def read(name):
+    return open(join(dirname(__file__), name)).read()
 
 
 setup(
