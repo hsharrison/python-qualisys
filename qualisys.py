@@ -105,6 +105,7 @@ def load_qtm_data(file_path, sentinel_word='Frame', datetime_index=False):
         data.index = _create_time_index(raw_data['Time'], metadata['time_stamp'])
     else:
         data.index = raw_data['Time']
+    data.index.name = 't'
 
     return QTMData(data, metadata)
 

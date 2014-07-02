@@ -29,6 +29,7 @@ def test_data():
         names=['marker', 'dim']
     ))
     assert data.index.dtype == 'float64'
+    assert data.index.name == 't'
     for _, column in data.iteritems():
         assert column.dtype == 'float64'
 
@@ -37,3 +38,4 @@ def test_datetime_index():
     data, _ = qualisys.load_qtm_data('example_data.txt', datetime_index=True)
     assert isinstance(data.index, pd.DatetimeIndex)
     assert data.index.dtype == 'datetime64[ns]'
+    assert data.index.name == 't'

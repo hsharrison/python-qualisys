@@ -8,7 +8,7 @@ def read(name):
 
 setup(
     name='python-qualisys',
-    version='0.1.3',
+    version='0.1.4',
     license='MIT',
 
     description='Import data from Qualisys Track Manager into pandas.',
