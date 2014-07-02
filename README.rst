@@ -20,7 +20,7 @@ Load data from a .txt file exported from QTM into `pandas <http://pandas.pydata.
      'no_of_frames': 720,
      'pc_on_time': 912.56663253,
      'no_of_cameras': 7,
-     'marker_names': ['right_knee', 'right_ankle'],
+     'marker_names': ['RIGHT_KNEE', 'right_ankle'],
      'frequency': 120,
      'no_of_markers': 2,
      'no_of_analog': 0,
@@ -29,7 +29,7 @@ Load data from a .txt file exported from QTM into `pandas <http://pandas.pydata.
 
     In [4]: data.head()
     Out[4]:
-                                   right_ankle                     right_knee  \
+                                   right_ankle                     RIGHT_KNEE  \
                                              x         y        z           x
     2014-06-17 12:53:44.008329999     1501.102  2073.985  102.815    1440.857
     2014-06-17 12:53:44.016669999     1501.187  2074.183  103.058    1440.625

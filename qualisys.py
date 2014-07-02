@@ -91,13 +91,13 @@ def load_qtm_data(file_path, sentinel_word='Frame'):
         raise TypeError('Only 3D data is supported')
 
     raw_data = pd.read_table(file_path, header=n_lines)
-    raw_data.columns = [column.lower() for column in raw_data.columns]
 
     data = pd.DataFrame({(marker, dim): raw_data[marker + ' ' + dim]
-                         for dim in ('x', 'y', 'z')
+                         for dim in ('X', 'Y', 'Z')
                          for marker in metadata['marker_names']})
-    data.columns = pd.MultiIndex.from_tuples(data.columns)
-    data.index = _create_time_index(raw_data['time'], metadata['time_stamp'])
+    data.columns = pd.MultiIndex.from_tuples(
+        [(marker, dim.lower()) for marker, dim in data.columns])
+    data.index = _create_time_index(raw_data['Time'], metadata['time_stamp'])
 
     return QTMData(data, metadata)
 

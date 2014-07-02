@@ -17,7 +17,7 @@ def test_metadata():
          'no_of_markers': 2,
          'no_of_frames': 720,
          'time_stamp': np.datetime64('2014-06-17T08:53:44-0400'),
-         'marker_names': ['right_knee', 'right_ankle']},
+         'marker_names': ['RIGHT_KNEE', 'right_ankle']},
         10)
 
 
@@ -26,7 +26,7 @@ def test_data():
 
     assert isinstance(data.index, pd.DatetimeIndex)
     assert data.columns.identical(pd.MultiIndex.from_product(
-        (('right_ankle', 'right_knee'), ('x', 'y', 'z'))
+        (['RIGHT_KNEE', 'right_ankle'], ['x', 'y', 'z'])
     ))
 
     assert data.index.dtype == 'datetime64[ns]'
