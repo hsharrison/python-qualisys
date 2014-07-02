@@ -26,7 +26,8 @@ def test_data():
 
     assert isinstance(data.index, pd.DatetimeIndex)
     assert data.columns.identical(pd.MultiIndex.from_product(
-        (['RIGHT_KNEE', 'right_ankle'], ['x', 'y', 'z'])
+        (['RIGHT_KNEE', 'right_ankle'], ['x', 'y', 'z']),
+        names=['marker', 'dim']
     ))
 
     assert data.index.dtype == 'datetime64[ns]'

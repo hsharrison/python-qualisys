@@ -96,7 +96,8 @@ def load_qtm_data(file_path, sentinel_word='Frame'):
                          for dim in ('X', 'Y', 'Z')
                          for marker in metadata['marker_names']})
     data.columns = pd.MultiIndex.from_tuples(
-        [(marker, dim.lower()) for marker, dim in data.columns])
+        [(marker, dim.lower()) for marker, dim in data.columns],
+        names=['marker', 'dim'])
     data.index = _create_time_index(raw_data['Time'], metadata['time_stamp'])
 
     return QTMData(data, metadata)
