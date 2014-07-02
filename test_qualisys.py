@@ -24,12 +24,16 @@ def test_metadata():
 def test_data():
     data, _ = qualisys.load_qtm_data('example_data.txt')
 
-    assert isinstance(data.index, pd.DatetimeIndex)
     assert data.columns.identical(pd.MultiIndex.from_product(
         (['RIGHT_KNEE', 'right_ankle'], ['x', 'y', 'z']),
         names=['marker', 'dim']
     ))
-
-    assert data.index.dtype == 'datetime64[ns]'
-    for i, column in data.iteritems():
+    assert data.index.dtype == 'float64'
+    for _, column in data.iteritems():
         assert column.dtype == 'float64'
+
+
+def test_datetime_index():
+    data, _ = qualisys.load_qtm_data('example_data.txt', datetime_index=True)
+    assert isinstance(data.index, pd.DatetimeIndex)
+    assert data.index.dtype == 'datetime64[ns]'
