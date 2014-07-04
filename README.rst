@@ -53,7 +53,7 @@ Load data from a .txt file exported from QTM into `pandas <http://pandas.pydata.
     Major_axis axis: 0.00833 to 6.0
     Minor_axis axis: x to z
 
-    In[5]: data['right_ankle'].head()
+    In [5]: data['right_ankle'].head()
     Out[5]:
     dim             x         y        z
     t
