@@ -10,5 +10,5 @@ install:
 script:
   - py.test -vv test_qualisys.py --cov src/ --cov-report term-missing
 
-after_succes:
+after_success:
   - coveralls
