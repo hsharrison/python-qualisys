@@ -5,20 +5,24 @@ import qualisys
 
 
 def test_metadata():
-    assert qualisys.get_metadata('example_data.txt') == (
-        {'no_of_cameras': 7,
-         'data_included': '3D',
-         'pc_on_time': 912.56663253,
-         'no_of_analog': 0,
-         'events': [],
-         'description': '--',
-         'frequency': 120,
-         'analog_frequency': 0,
-         'no_of_markers': 2,
-         'no_of_frames': 720,
-         'time_stamp': np.datetime64('2014-06-17T08:53:44-0400'),
-         'marker_names': ['RIGHT_KNEE', 'right_ankle']},
-        10)
+    metadata, n_lines = qualisys.get_metadata('example_data.txt')
+
+    assert n_lines == 10
+    assert isinstance(metadata['time_stamp'], np.datetime64)
+    del metadata['time_stamp']
+    assert metadata == {
+        'no_of_cameras': 7,
+        'data_included': '3D',
+        'pc_on_time': 912.56663253,
+        'no_of_analog': 0,
+        'events': [],
+        'description': '--',
+        'frequency': 120,
+        'analog_frequency': 0,
+        'no_of_markers': 2,
+        'no_of_frames': 720,
+        'marker_names': ['RIGHT_KNEE', 'right_ankle']
+    }
 
 
 def test_data():
