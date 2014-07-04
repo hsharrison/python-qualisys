@@ -24,18 +24,49 @@ def test_metadata():
 def test_data():
     data, _ = qualisys.load_qtm_data('example_data.txt')
 
+    assert set(data) == {'RIGHT_KNEE', 'right_ankle'}
+    assert data.axes[1].dtype == 'float64'
+    assert np.all(data.axes[2] == ['x', 'y', 'z'])
+
+    for _, frame in data.iteritems():
+        yield check_index, frame
+        yield check_columns, frame
+
+
+def test_multi_index():
+    data, _ = qualisys.load_qtm_data('example_data.txt', multi_index=True)
+
     assert data.columns.identical(pd.MultiIndex.from_product(
         (['RIGHT_KNEE', 'right_ankle'], ['x', 'y', 'z']),
         names=['marker', 'dim']
     ))
-    assert data.index.dtype == 'float64'
-    assert data.index.name == 't'
-    for _, column in data.iteritems():
-        assert column.dtype == 'float64'
+
+    yield check_index, data
+    yield check_columns, data
 
 
 def test_datetime_index():
     data, _ = qualisys.load_qtm_data('example_data.txt', datetime_index=True)
-    assert isinstance(data.index, pd.DatetimeIndex)
-    assert data.index.dtype == 'datetime64[ns]'
-    assert data.index.name == 't'
+    for _, frame in data.iteritems():
+        yield check_datetime_index, frame
+
+
+def test_datetime_index_multi_index():
+    data, _ = qualisys.load_qtm_data('example_data.txt', multi_index=True, datetime_index=True)
+    yield check_datetime_index, data
+
+
+def check_datetime_index(frame):
+    assert isinstance(frame.index, pd.DatetimeIndex)
+    assert frame.index.name == 't'
+    assert frame.index.dtype == 'datetime64[ns]'
+
+
+def check_index(frame):
+    assert isinstance(frame.index, pd.Float64Index)
+    assert frame.index.name == 't'
+    assert frame.index.dtype == 'float64'
+
+
+def check_columns(frame):
+    assert all(column.dtype == 'float64' for _, column in frame.items())
