@@ -2,10 +2,10 @@
 python-qualisys
 ===============
 
-+--------------------+---------------------+
-| | |travis-badge|   | | |version-badge| | |
-| | |coverage-badge| | | |license-badge| | |
-+--------------------+---------------------+
++--------------------+-------------------+
+| | |travis-badge|   | | |version-badge| |
+| | |coverage-badge| | | |license-badge| |
++--------------------+-------------------+
 
 .. |travis-badge| image:: http://img.shields.io/travis/hsharrison/python-qualisys.png?style=flat
     :alt: Travis-CI Build Status
@@ -16,7 +16,7 @@ python-qualisys
 .. |version-badge| image:: http://img.shields.io/pypi/v/python-qualisys.png?style=flat
     :alt: PYPI Package
     :target: https://pypi.python.org/pypi/python-qualisys
-.. |license-badge| image:: http://img.shields.io/badge/license-MIT-blue?style=flat
+.. |license-badge| image:: http://img.shields.io/badge/license-MIT-blue.png?style=flat
     :alt: License
     :target: https://pypi.python.org/pypi/python-qualisys
 
