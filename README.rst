@@ -2,6 +2,24 @@
 python-qualisys
 ===============
 
++--------------------+---------------------+
+| | |travis-badge|   | | |version-badge| | |
+| | |coverage-badge| | | |license-badge| | |
++--------------------+---------------------+
+
+.. |travis-badge| image:: http://img.shields.io/travis/hsharrison/python-qualisys.png?style=flat
+    :alt: Travis-CI Build Status
+    :target: https://travis-ci.org/hsharrison/python-qualisys
+.. |coverage-badge| image:: http://img.shields.io/coveralls/hsharrison/python-qualisys.png?style=flat
+    :alt: Coverage Status
+    :target: https://coveralls.io/r/hsharrison/python-qualisys
+.. |version-badge| image:: http://img.shields.io/pypi/v/python-qualisys.png?style=flat
+    :alt: PYPI Package
+    :target: https://pypi.python.org/pypi/python-qualisys
+.. |license-badge| image:: http://img.shields.io/badge/license-MIT-blue?style=flat
+    :alt: License
+    :target: https://pypi.python.org/pypi/python-qualisys
+
 Load data from a .txt file exported from QTM into `pandas <http://pandas.pydata.org>`_::
 
     pip install qualisys

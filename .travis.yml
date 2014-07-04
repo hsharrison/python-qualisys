@@ -1,0 +1,14 @@
+language: python
+python:
+  - 3.3
+  - 3.4
+
+install:
+  - pip install . pytest pytest-cov python-coveralls
+  - pip install pytest
+
+script:
+  - travis_wait py.test test_qualisys.py --cov src/ --cov-report term-missing
+
+after_succes:
+  - coveralls
