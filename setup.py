@@ -20,6 +20,7 @@ setup(
     url='https://bitbucket.org/hharrison/python-qualisys',
     download_url='https://bitbucket.org/hharrison/python-qualisys/get/default.tar.gz',
 
+    package_dir = {'': 'src'},
     py_modules=['qualisys'],
 
     keywords='qualisys qtm motion-capture import biomechanics',
