@@ -13,7 +13,7 @@ python-qualisys
 .. |coverage-badge| image:: http://img.shields.io/coveralls/hsharrison/python-qualisys.png?style=flat
     :alt: Coverage Status
     :target: https://coveralls.io/r/hsharrison/python-qualisys
-.. |version-badge| image:: http://img.shields.io/pypi/v/python-qualisys.png?style=flat
+.. |version-badge| image:: http://img.shields.io/pypi/v/qualisys.png?style=flat
     :alt: PYPI Package
     :target: https://pypi.python.org/pypi/python-qualisys
 .. |license-badge| image:: http://img.shields.io/badge/license-MIT-blue.png?style=flat

@@ -7,7 +7,7 @@ def read(name):
 
 
 setup(
-    name='python-qualisys',
+    name='qualisys',
     version='0.2.0',
     license='MIT',
 
